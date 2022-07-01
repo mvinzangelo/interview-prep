@@ -14,16 +14,21 @@ def rotate(inMatrix):
 	for i in range(0, int(len(inMatrix) / 2)):
 		tempVals[0] = inMatrix[0][i]
 		tempVals[1] = inMatrix[i][len(inMatrix) - 1] 
-		tempVals[2] = inMatrix[len(inMatrix) - 1][i] 
+		tempVals[2] = inMatrix[len(inMatrix) - 1 - i][0] 
 		tempVals[3] = inMatrix[len(inMatrix) - 1][len(inMatrix) - 1 - i]
-		print(tempVals)
+		
 		
 		inMatrix[0][i] = tempVals[2]
 		inMatrix[i][len(inMatrix) - 1] = tempVals[0]
-		inMatrix[len(inMatrix) - 1][i] = tempVals[3]
+		inMatrix[len(inMatrix) - 1 - i][0] = tempVals[3]
 		inMatrix[len(inMatrix) - 1][len(inMatrix) - 1 - i] = tempVals[1]
+		
+		for j in inMatrix:
+			print(j)
+		print()	
 
 	return inMatrix
 	
-
-print(rotate([[1,2],[3,4]]))
+rotate([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]])
+# print(rotate([[1,2,3],[4,5,6],[7,8,9]]))
+# print(rotate([[1,2],[3,4]]))
