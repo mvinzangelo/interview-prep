@@ -24,13 +24,24 @@ def rotate(inMatrix):
 			inMatrix[len(inMatrix) - 1 - j][i] = tempVals[3]
 			inMatrix[len(inMatrix) - 1 - i][len(inMatrix) - 1 - j] = tempVals[1]
 		
-		for j in inMatrix:
-			print(j)
-		print()	
+
+	if len(inMatrix) % 2 != 0:
+		for i in range(0, int(len(inMatrix) / 2)):
+			tempVals[0] = inMatrix[i][int(len(inMatrix) / 2)]
+			tempVals[1] = inMatrix[int(len(inMatrix) / 2)][len(inMatrix) - 1 - i] 
+			tempVals[2] = inMatrix[len(inMatrix) - 1 - i][int(len(inMatrix) / 2)] 
+			tempVals[3] = inMatrix[int(len(inMatrix) / 2)][i]
+
+			inMatrix[i][int(len(inMatrix) / 2)] = tempVals[3]
+			inMatrix[int(len(inMatrix) / 2)][len(inMatrix) - 1 - i] = tempVals[0]
+			inMatrix[len(inMatrix) - 1 - i][int(len(inMatrix) / 2)] = tempVals[1]
+			inMatrix[int(len(inMatrix) / 2)][i] = tempVals[2]
 
 	return inMatrix
 	
-rotate([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]])
-# print(rotate([[1,2,3],[4,5,6],[7,8,9]]))
+
+rotate([[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15],[16,17,18,19,20],[21,22,23,24,25] ])
+# rotate([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]])
+# rotate([[1,2,3],[4,5,6],[7,8,9]])
 # print(rotate([[1,2],[3,4]]))
 
