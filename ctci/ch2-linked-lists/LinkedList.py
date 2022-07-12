@@ -73,3 +73,4 @@ class DoublyLinkedList(LinkedList):
             self.tail.next = LinkedListNode(value)
             self.tail = self.tail.next
         return 
+# FROM https://github.com/careercup/CtCI-6th-Edition-Python
