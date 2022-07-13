@@ -1,6 +1,5 @@
 from random import randint
 
-
 class LinkedListNode:
 
     def __init__(self, value, nextNode=None, prevNode=None):
